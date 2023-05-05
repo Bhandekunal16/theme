@@ -1,7 +1,30 @@
 @import "../../assets/colors.scss";
 
-#box {
-  color: $success-color;
+#sider {
+  background-color: $light-color;
   height: 100%;
   width: 100%;
+}
+#header {
+  background-color: $light-color;
+  text-align: center;
+}
+#title {
+  color: $orange;
+}
+#footer {
+  text-align: center;
+}
+#content {
+  background-color: $contant;
+  height: 100%;
+}
+.wrapper {
+  width: "20%";
+  color: $orange;
+}
+
+button {
+  margin-bottom: "10%";
+  float: left;
 }
