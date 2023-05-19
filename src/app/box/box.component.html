@@ -5,51 +5,63 @@
         <span
           nz-icon
           [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+          class="link"
         ></span>
       </button>
       <ul
         nz-menu
         nzMode="inline"
         nzTheme="light"
+        class="link"
         [nzInlineCollapsed]="isCollapsed"
       >
         <li
           nz-menu-item
           nz-tooltip
           nzTooltipPlacement="right"
-          [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''"
+          [nzTooltipTitle]="isCollapsed ? 'Home' : ''"
           nzSelected
+          (click)="home()"
         >
           <span nz-icon nzType="mail"></span>
-          <span>Navigation One</span>
+          <span>Home</span>
         </li>
-        <li nz-submenu nzTitle="Navigation Two" nzIcon="appstore">
+        <li nz-submenu nzTitle="Services" nzIcon="appstore">
           <ul>
-            <li nz-menu-item>Option 6</li>
-            <li nz-menu-item>Option 6</li>
-            <li nz-submenu nzTitle="Submenu">
+            <li nz-menu-item> <a href="https://bhandekunal16.github.io/Robotec-project/" class="link">Robotec calculater</a></li>
+            <li nz-menu-item><a href="https://robotec-dashboard-0-1.vercel.app/" class="link">Robotec Dashboard </a></li>
+            <li nz-submenu nzTitle="learn with us">
               <ul>
-                <li nz-menu-item>Option 7</li>
-                <li nz-menu-item>Option 8</li>
+                <li nz-menu-item> <a href="https://github.com/bhandekunal16/c" class="link">C</a></li>
+                <li nz-menu-item> <a href="" class="link">Nest.js api's </a></li>
+                <li nz-menu-item> <a href="" class="link">Nest.js microservice</a></li>
               </ul>
             </li>
           </ul>
         </li>
-        <li nz-submenu nzTitle="Navigation Three" nzIcon="setting">
+        <li nz-submenu nzTitle="setting" nzIcon="setting">
           <ul>
             <li nz-menu-item>Option 9</li>
             <li nz-menu-item>Option 10</li>
             <li nz-menu-item>Option 11</li>
           </ul>
         </li>
+        <li nz-submenu nzTitle="templates" nzIcon="appstore">
+          <ul>
+            <li nz-menu-item><a href="https://bhandekunal16.github.io/Smart-school/" class="link">Smart school  </a></li>
+           
+            <li nz-menu-item><a href="https://bhandekunal16.github.io/HOSPITAL-PROJECT-HTML---CSS/" class="link"> Smart Hospital </a></li>
+            <li nz-menu-item><a href="https://bhandekunal16.github.io/Introduction/" class="link"> Introduction </a></li>
+          </ul>
+        </li>
       </ul>
     </div></nz-sider
   >
   <nz-layout>
-    <nz-header id="header"> <h1 id="title">Robotec</h1></nz-header>
-    <nz-content id="content"></nz-content>
-    <nz-footer id="footer">
-      <h3>https://github.com/Bhandekunal16/theme.git</h3></nz-footer
+    <nz-header id="header"> <h1 ><span class="link">R</span>obotec</h1></nz-header>
+    <nz-content id="content"><router-outlet></router-outlet></nz-content>
+    <nz-footer id="footer" >
+      <h3 class="link">https://github.com/Bhandekunal16/theme.git</h3></nz-footer
     >
   </nz-layout>
 </nz-layout>

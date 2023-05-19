@@ -10,7 +10,7 @@
   text-align: center;
 }
 #title {
-  color: $orange;
+  color: $dark-color;
 }
 #footer {
   text-align: center;
@@ -20,11 +20,14 @@
   height: 100%;
 }
 .wrapper {
-  width: "20%";
-  color: $orange;
+  width: "25%";
+  color: $dark-color;
 }
 
 button {
   margin-bottom: "10%";
   float: left;
+}
+.link {
+ color: $orange;
 }

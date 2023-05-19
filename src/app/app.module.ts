@@ -19,12 +19,31 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BoxComponent } from './box/box.component';
 import { registerLocaleData } from '@angular/common';
 import { NzConfig } from 'ng-zorro-antd/core/config';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProjectComponent } from './project/project.component';
+import { ContainerComponent } from './container/container.component';
+import { InstagramComponent } from './instagram/instagram.component';
+import { YoutubeComponent } from './youtube/youtube.component';
+import { ProjectFormComponent } from './project-form/project-form.component';
+import { InstagramFormComponent } from './instagram-form/instagram-form.component';
+import { SubscribeFormComponent } from './subscribe-form/subscribe-form.component';
 
 registerLocaleData(en);
 const antDesignIcons = AllIcons as {
@@ -40,7 +59,18 @@ const ngZorroConfig: NzConfig = {
   },
 };
 @NgModule({
-  declarations: [AppComponent, BoxComponent],
+  declarations: [
+    AppComponent,
+    BoxComponent,
+    DashboardComponent,
+    ProjectComponent,
+    ContainerComponent,
+    InstagramComponent,
+    YoutubeComponent,
+    ProjectFormComponent,
+    InstagramFormComponent,
+    SubscribeFormComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -55,10 +85,22 @@ const ngZorroConfig: NzConfig = {
     HttpClientJsonpModule,
     HttpClientModule,
     NzListModule,
+    NzDropDownModule,
     NzCollapseModule,
     NzDrawerModule,
     NzNoAnimationModule,
     BrowserAnimationsModule,
+    NzCardModule,
+    NzSkeletonModule,
+    NzAvatarModule,
+    NzSwitchModule,
+    NzModalModule,
+    NzSelectModule,
+    NzGridModule,
+    NzTabsModule,
+    NzTableModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

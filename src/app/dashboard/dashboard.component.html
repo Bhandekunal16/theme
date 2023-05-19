@@ -1,0 +1,49 @@
+<div  class="ui">
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzSpan]="8">
+      <button
+        nz-button
+        nzType="primary"
+        style="margin-left: 5%; margin-top: 2%"
+        (click)="projectform()"
+        class="button"
+      >
+        Add projects
+      </button>
+      <nz-card nzTitle="Projects" (click)="projects()">
+        <p>Project count :</p>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="8">
+      <button
+        nz-button
+        nzType="primary"
+        style="margin-left: 5%; margin-top: 2%"
+        (click)="instaform()"
+        class="button"
+      >
+        Add persoan
+      </button>
+      <nz-card nzTitle="Instagram" (click)="Instagram()">
+        <p>follwer count :</p>
+        <p>following count :</p>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="8">
+      <button
+        nz-button
+        nzType="primary"
+        style="margin-left: 5%; margin-top: 2%"
+        (click)="subform()"
+        class="button"
+      >
+        Add subscriber
+      </button>
+      
+      <nz-card nzTitle="Youtube" (click)="youtube()">
+        <p>Youtube subscriber :</p>
+        <p>Youtube vedio :</p>
+      </nz-card>
+    </div>
+  </div>
+</div>
