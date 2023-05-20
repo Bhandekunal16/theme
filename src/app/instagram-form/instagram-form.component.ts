@@ -10,6 +10,8 @@ import {
 import { Observable, Observer } from 'rxjs';
 
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
+import { InstagramService } from './instagram.service';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-instagram-form',
@@ -19,25 +21,25 @@ import { NzSafeAny } from 'ng-zorro-antd/core/types';
 export class InstagramFormComponent {
 
     validateForm!: UntypedFormGroup;
-
-    constructor(private fb: UntypedFormBuilder) {}
+noti:any
+    constructor(private fb: UntypedFormBuilder, private insta: InstagramService) {}
   
   
     additionalForm(): void {
       if (this.validateForm.valid) {
         console.log('submit', this.validateForm.value);
-      //   this.route.navigate(['']);
-      //   // let data = this.validateForm.value;
-      //   // this.registerservice.additionalForm(data).then((res) => {
-      //   //   this.noti.success('Success', 'Register successfully');
-      //   });
-      // } else {
-      //   Object.values(this.validateForm.controls).forEach((control) => {
-      //     if (control.invalid) {
-      //       control.markAsDirty();
-      //       control.updateValueAndValidity({ onlySelf: true });
-      //     }
-      //   });
+        // this.route.navigate(['']);
+          let data = this.validateForm.value;
+      this.insta.addInsta(data).then((res) => {
+         this.noti.success('Success', 'Register successfully');
+         });
+       } else {
+         Object.values(this.validateForm.controls).forEach((control) => {
+          if (control.invalid) {
+            control.markAsDirty();
+         control.updateValueAndValidity({ onlySelf: true });
+        }
+       });
       }
     }
     // change() {
@@ -72,7 +74,7 @@ export class InstagramFormComponent {
         // password: [null, [Validators.required]],
         // checkPassword: [null, [Validators.required, this.confirmationValidator]],
         userName: [null, [Validators.required]],
-        Date: [null, [Validators.required]],
+        // Date: [null, [Validators.required]],
         type: [null, [Validators.required]],
         // shopphoneNumberPrefix: [''],
         // shopPhoneNumber: [null, [Validators.required]],
