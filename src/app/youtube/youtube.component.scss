@@ -1,0 +1,16 @@
+@import '../../assets/colors.scss';
+.name{
+    color:$info-color
+}
+
+.lang{
+    color:$success-color
+}
+
+.number{
+    color:$danger-color
+}
+
+.header{
+    color: $orange;
+}

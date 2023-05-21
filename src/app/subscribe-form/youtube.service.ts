@@ -10,7 +10,10 @@ export class YoutubeService {
   addYouTube(data: YoutubeService) {
     return new Promise((resolve, reject) => {
       this.http
-        .post<YoutubeService>(environment.apiUrl + 'youtube/createYoutube', data)
+        .post<YoutubeService>(
+          environment.apiUrl + 'youtube/createYoutube',
+          data
+        )
         .subscribe(
           (res: any) => {
             console.log(res);

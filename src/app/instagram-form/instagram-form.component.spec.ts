@@ -8,9 +8,8 @@ describe('InstagramFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InstagramFormComponent ]
-    })
-    .compileComponents();
+      declarations: [InstagramFormComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(InstagramFormComponent);
     component = fixture.componentInstance;

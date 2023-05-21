@@ -1,7 +1,3 @@
-
-
-
-
 <div style="padding: 10px 5px 5px 10px">
   <nz-table #basicTable>
     <thead>
@@ -9,17 +5,14 @@
         <th class="header">Name</th>
         <th class="header">Date</th>
         <th class="header">Type</th>
-        
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let data of user; let i = index">
         <td class="name">{{ data.userName }}</td>
         <td class="lang">{{ data.Date }}</td>
-        <td class="number">{{ data.type }}</td> 
-    
+        <td class="number">{{ data.type }}</td>
       </tr>
     </tbody>
   </nz-table>
 </div>
-

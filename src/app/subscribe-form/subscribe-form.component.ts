@@ -5,7 +5,7 @@ import {
   UntypedFormControl,
   UntypedFormGroup,
   ValidatorFn,
-  Validators
+  Validators,
 } from '@angular/forms';
 import { Observable, Observer } from 'rxjs';
 
@@ -15,24 +15,23 @@ import { YoutubeService } from './youtube.service';
 @Component({
   selector: 'app-subscribe-form',
   templateUrl: './subscribe-form.component.html',
-  styleUrls: ['./subscribe-form.component.scss']
+  styleUrls: ['./subscribe-form.component.scss'],
 })
 export class SubscribeFormComponent {
   validateForm!: UntypedFormGroup;
 
   noti: any;
 
-  constructor(private fb: UntypedFormBuilder, private sub:YoutubeService) {}
-
+  constructor(private fb: UntypedFormBuilder, private sub: YoutubeService) {}
 
   additionalForm(): void {
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
       // this.route.navigate(['']);
-    let data = this.validateForm.value;
-     this.sub.addYouTube(data).then((res) => {
-       this.noti.success('Success', 'Register successfully');
-     });
+      let data = this.validateForm.value;
+      this.sub.addYouTube(data).then((res) => {
+        this.noti.success('Success', 'Register successfully');
+      });
     } else {
       Object.values(this.validateForm.controls).forEach((control) => {
         if (control.invalid) {
@@ -83,5 +82,4 @@ export class SubscribeFormComponent {
       // agree: [false],
     });
   }
-
 }

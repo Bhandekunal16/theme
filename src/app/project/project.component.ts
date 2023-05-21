@@ -5,16 +5,20 @@ import { ProjectTableService } from './project-table.service';
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.scss']
+  styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent {
-  constructor(private router: Router, private route:ActivatedRoute, private project:ProjectTableService) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private project: ProjectTableService
+  ) {}
   user: any[] = [];
-  projectName:any;
-  codeIn:any;
-  Date:any;
+  projectName: any;
+  codeIn: any;
+  Date: any;
 
-  ngOnInit(){
+  ngOnInit() {
     this.project
       .table()
       .then((res: any) => {
@@ -26,7 +30,5 @@ export class ProjectComponent {
       .catch((error: any) => {
         console.log(error);
       });
-
   }
-  
 }

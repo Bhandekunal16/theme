@@ -5,26 +5,27 @@ import {
   UntypedFormControl,
   UntypedFormGroup,
   ValidatorFn,
-  Validators
+  Validators,
 } from '@angular/forms';
 import { Observable, Observer } from 'rxjs';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
-import {ProjectService} from'./project.service'
+import { ProjectService } from './project.service';
 
 @Component({
   selector: 'app-project-form',
   templateUrl: './project-form.component.html',
-  styleUrls: ['./project-form.component.scss']
+  styleUrls: ['./project-form.component.scss'],
 })
 export class ProjectFormComponent {
   validateForm!: UntypedFormGroup;
   // projectservice: any;
-  noti:any
+  noti: any;
 
-
-  constructor(private fb: UntypedFormBuilder, private projectservice:ProjectService) {}
-
+  constructor(
+    private fb: UntypedFormBuilder,
+    private projectservice: ProjectService
+  ) {}
 
   // additionalForm(): void {
   //   if (this.validateForm.valid) {
@@ -102,6 +103,4 @@ export class ProjectFormComponent {
       });
     }
   }
-
-
 }

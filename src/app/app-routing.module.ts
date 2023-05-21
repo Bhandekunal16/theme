@@ -26,7 +26,6 @@ const routes: Routes = [
           { path: 'projectform', component: ProjectFormComponent },
           { path: 'instform', component: InstagramFormComponent },
           { path: 'subform', component: SubscribeFormComponent },
-  
         ],
       },
     ],

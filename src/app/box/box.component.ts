@@ -7,14 +7,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./box.component.scss'],
 })
 export class BoxComponent {
-  constructor(private router: Router, private route:ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
   isCollapsed = false;
 
   toggleCollapsed(): void {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  
   home() {
     this.router.navigate(['/dashboard'], {
       relativeTo: this.route,

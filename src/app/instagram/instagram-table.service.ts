@@ -4,12 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/env/envirment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InstagramTableService {
   constructor(private http: HttpClient) {}
 
- 
   table() {
     return new Promise((resolve, reject) => {
       this.http.get(environment.apiUrl + 'insta/getAllinst').subscribe(
@@ -22,4 +21,4 @@ export class InstagramTableService {
       );
     });
   }
-  }
+}
