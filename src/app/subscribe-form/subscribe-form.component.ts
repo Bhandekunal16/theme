@@ -10,6 +10,7 @@ import {
 import { Observable, Observer } from 'rxjs';
 
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
+import { YoutubeService } from './youtube.service';
 
 @Component({
   selector: 'app-subscribe-form',
@@ -19,24 +20,26 @@ import { NzSafeAny } from 'ng-zorro-antd/core/types';
 export class SubscribeFormComponent {
   validateForm!: UntypedFormGroup;
 
-  constructor(private fb: UntypedFormBuilder) {}
+  noti: any;
+
+  constructor(private fb: UntypedFormBuilder, private sub:YoutubeService) {}
 
 
   additionalForm(): void {
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
-    //   this.route.navigate(['']);
-    //   // let data = this.validateForm.value;
-    //   // this.registerservice.additionalForm(data).then((res) => {
-    //   //   this.noti.success('Success', 'Register successfully');
-    //   });
-    // } else {
-    //   Object.values(this.validateForm.controls).forEach((control) => {
-    //     if (control.invalid) {
-    //       control.markAsDirty();
-    //       control.updateValueAndValidity({ onlySelf: true });
-    //     }
-    //   });
+      // this.route.navigate(['']);
+    let data = this.validateForm.value;
+     this.sub.addYouTube(data).then((res) => {
+       this.noti.success('Success', 'Register successfully');
+     });
+    } else {
+      Object.values(this.validateForm.controls).forEach((control) => {
+        if (control.invalid) {
+          control.markAsDirty();
+          control.updateValueAndValidity({ onlySelf: true });
+        }
+      });
     }
   }
   // change() {
@@ -70,8 +73,8 @@ export class SubscribeFormComponent {
       // email: [null, [Validators.email, Validators.required]],
       // password: [null, [Validators.required]],
       // checkPassword: [null, [Validators.required, this.confirmationValidator]],
-      userName: [null, [Validators.required]],
-      Date: [null, [Validators.required]],
+      name: [null, [Validators.required]],
+      // Date: [null, [Validators.required]],
       type: [null, [Validators.required]],
       // shopphoneNumberPrefix: [''],
       // shopPhoneNumber: [null, [Validators.required]],

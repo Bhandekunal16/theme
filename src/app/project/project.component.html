@@ -1,13 +1,3 @@
-<button
-  nz-button
-  nzType="primary"
-  (click)="table()"
-  style="margin-left: 5%; margin-top: 2%"
->
-  Show Project
-</button>
-
-
 
 <div style="padding: 10px 5px 5px 10px">
   <nz-table #basicTable>
@@ -20,8 +10,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let data of user; let i = index">
-        <td class="footer">{{ data.projectName }}</td>
-        <td class="footer">{{ data.codeIn }}</td>
+        <td class="name">{{ data.projectName }}</td>
+        <td class="lang">{{ data.codeIn }}</td>
         <td class="number">{{ data.Date }}</td>
   
       </tr>

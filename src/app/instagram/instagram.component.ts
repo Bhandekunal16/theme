@@ -5,17 +5,21 @@ import { InstagramTableService } from './instagram-table.service';
 @Component({
   selector: 'app-instagram',
   templateUrl: './instagram.component.html',
-  styleUrls: ['./instagram.component.scss']
+  styleUrls: ['./instagram.component.scss'],
 })
 export class InstagramComponent {
-  constructor(private router: Router, private route:ActivatedRoute, private inst:InstagramTableService) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private inst: InstagramTableService
+  ) {}
 
   user: any[] = [];
   userName: any;
-  type:any;
-  Date:any;
+  type: any;
+  Date: any;
 
-  table() {
+  ngOnInit() {
     this.inst
       .table()
       .then((res: any) => {

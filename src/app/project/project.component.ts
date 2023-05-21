@@ -14,7 +14,7 @@ export class ProjectComponent {
   codeIn:any;
   Date:any;
 
-  table() {
+  ngOnInit(){
     this.project
       .table()
       .then((res: any) => {
@@ -26,5 +26,7 @@ export class ProjectComponent {
       .catch((error: any) => {
         console.log(error);
       });
+
   }
+  
 }

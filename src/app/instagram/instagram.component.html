@@ -1,11 +1,4 @@
-<button
-  nz-button
-  nzType="primary"
-  (click)="table()"
-  style="margin-left: 5%; margin-top: 2%"
->
-  Show User
-</button>
+
 
 
 
@@ -21,8 +14,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let data of user; let i = index">
-        <td class="footer">{{ data.userName }}</td>
-        <td class="footer">{{ data.Date }}</td>
+        <td class="name">{{ data.userName }}</td>
+        <td class="lang">{{ data.Date }}</td>
         <td class="number">{{ data.type }}</td> 
     
       </tr>
